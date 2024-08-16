@@ -11,10 +11,14 @@ void main(List<String> arguments) {
   nome = stdin.readLineSync();
   print('Digite seu sobrenome: ');
   sobrenome = stdin.readLineSync();
-  
+
   nomeCompleto(nome: nome, sobrenome: sobrenome);
 }
 
 void nomeCompleto({required nome, required sobrenome}) {
-  print(nome + (sobrenome ?? ' [sobrenome não incluido]'));
+  /*nome ?? '[Nome não incluido]';
+  sobrenome ?? ' [Sobrenome não incluido]';
+*/
+sobrenome = sobrenome == '' ? ' sobrenome vazio' : sobrenome ?? ' sobrenome nulo ';
+  print('$nome $sobrenome');
 }
